@@ -1,0 +1,14 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findPeakElement = function(nums) {
+    let len = nums.length;
+    if(len == 1){return 0;}
+    if(nums[len - 1]>nums[len - 2]){
+        return len - 1;
+    }else{
+        nums.pop();
+        return findPeakElement(nums);
+    }
+};
